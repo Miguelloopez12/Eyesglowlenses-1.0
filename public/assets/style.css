@@ -52,8 +52,6 @@ body {
 }
 
 
-
-
 .fw-300 {
     font-family: 'Comic Neue';
     font-weight: 300;
@@ -1013,12 +1011,49 @@ label {
     text-align: center;
 }
 
+
 .contenido-pedido {
-    margin: auto;
-    width: 60rem;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    align-items: center;
+    width: 100%; /* Ajusta el ancho según sea necesario */
+}
+
+.row-compra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenidopedidoo {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    width: 100%;
+}
+
+.contenidopedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 20;
+}
+
+
+.Nombre-compra, .linea-debajo {
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+.contenidopedidoo p{
+    font-size: 2rem;
+    font-family: 'San Francisco', Helvetica, Arial, san-serif;
+}
+
+.contenido-pedido span {
+    font-size: 2rem;
+    font-family: 'San Francisco', Helvetica, Arial, san-serif;
 }
 
 .contenido-pedido p {

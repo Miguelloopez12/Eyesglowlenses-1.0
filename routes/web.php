@@ -41,3 +41,5 @@ route::get("/descripcion/{id_productos}", [ProductosController::class,"mostrarDe
 
 route::get("/compra/{id_productos}", [ProductosController::class,"mostrarProducto"])->name("compra.pr");
 
+Route::get('/compra', [ProductosController::class, 'mostrarCompra'])->name('compra');
+

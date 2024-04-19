@@ -52,12 +52,17 @@ class ProductosController extends Controller
         return view("compra",["Productoss"=> $Productoss]);
     }
 
+    public function mostrarCompra()
+{
+    return view("compra");
+}
+
 
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response 
+     * @return \Illuminate\Http\Response
     /**
      * Store a newly created resource in storage.
      *

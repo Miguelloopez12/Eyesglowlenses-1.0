@@ -41,7 +41,7 @@
                     <h1 class="titulo">EyesGlowLenses</h1>
 
                     <nav class="menunavegacion">
-                        <a href="{{asset("home")}}">Inicio</a>
+                        <a href="{{ asset('home') }}">Inicio</a>
                         <a href="#">Buscar</a>
 
                     </nav>
@@ -57,20 +57,20 @@
                         </div>
                     </div>
 
-                </header>
+            </header>
 
 
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="botonFinalizar" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="botonFinalizar" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
-                            {{ 'Finalizar sesión' }}
-                        </a>
+                    {{ 'Finalizar sesión' }}
+                </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
 
 
 
@@ -79,9 +79,9 @@
             <header class="headerdos">
                 <div class="menudos">
                     <nav class="menudecategoria">
-                        <a href="{{route("conbordes")}}">Lentes con bordes</a>
-                        <a href="{{route("sinbordes")}}">Lentes sin bordes</a>
-                        <a href="{{route("sinbordes")}}">Lentes tricolor</a>
+                        <a href="{{ route('conbordes') }}">Lentes con bordes</a>
+                        <a href="{{ route('sinbordes') }}">Lentes sin bordes</a>
+                        <a href="{{ route('sinbordes') }}">Lentes tricolor</a>
                     </nav>
                 </div>
             </header>
@@ -101,7 +101,9 @@
                         stroke="currentColor" id="icon-x" class="icon-close">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
+
                 </div>
+                <a href="#">Comprar</a>
 
             </div>
 
@@ -109,11 +111,12 @@
                 <h3>Total:</h3>
                 <span class="total-pagar"></span>
             </div>
+            <a href="{{route("compra")}}"class="boton-producto">Comprar</a>
         </div>
         </div>
 
 
-@yield("footer")
+        @yield('footer')
 
 
         <footer class="footerunoclass contenedor">
@@ -131,7 +134,7 @@
             </div>
         </footer>
 
-        <script src="{{ asset('assets/index.js')}}" ></script>
+        <script src="{{ asset('assets/index.js') }}"></script>
 
 
     </body>
