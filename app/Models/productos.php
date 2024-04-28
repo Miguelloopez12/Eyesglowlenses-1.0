@@ -17,4 +17,11 @@ class productos extends Model
         return $this->belongsTo(Categoria::class, 'id_categoria');
     }
 
+    public function compras()
+    {
+        return $this->belongsToMany(Compra::class, 'productos_comprados', 'id_producto', 'id_compra');
+    }
+
+
+
 }

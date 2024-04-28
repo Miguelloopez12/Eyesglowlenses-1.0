@@ -103,7 +103,7 @@
                     </svg>
 
                 </div>
-                <a href="#">Comprar</a>
+
 
             </div>
 
@@ -111,7 +111,7 @@
                 <h3>Total:</h3>
                 <span class="total-pagar"></span>
             </div>
-            <a href="{{route("compra")}}"class="boton-producto">Comprar</a>
+            <a href="{{route("compra")}}"class="boton-producto-carrito">Comprar</a>
         </div>
         </div>
 

@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CompraController;
 use App\Http\Controllers\ProductosController;
 
 /*
@@ -28,12 +30,14 @@ Route::get('/compra', function () {
 Auth::routes();
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('Eyesglowlenses');
+
 
 
 Route::get('/sinbordes', [ProductosController::class, 'index'])->name('sinbordes');
 
 route::get("/conbordes", [ProductosController::class,"index1"])->name("conbordes");
+
+route::get("/home", [HomeController::class,"index"])->name("home");
 
 
 
@@ -41,5 +45,10 @@ route::get("/descripcion/{id_productos}", [ProductosController::class,"mostrarDe
 
 route::get("/compra/{id_productos}", [ProductosController::class,"mostrarProducto"])->name("compra.pr");
 
-Route::get('/compra', [ProductosController::class, 'mostrarCompra'])->name('compra');
+Route::post('/compra', [CompraController::class, 'procesarCompra'])->name("compra");
+
+
+
+
+
 

@@ -55,9 +55,18 @@
                     <p class="linea-debajo"></p>
             </div>
 
-            <div class="boton-compra">
-                <a href="/compra.html" class="boton-producto">Finalizar compra</a>
+            <div class="cart-total">
+                <h3>Total a pagar:</h3>
+                <span class="fin-total-pagar"></span>
+                <div id="mensaje"></div>
             </div>
+
+            <form  id="form-finalizar-compra" action="" method="POST">
+                @csrf
+                <div class="boton-compra">
+                <button class="boton-producto" type="submit">Finalizar compra</button>
+                </div>
+            </form>
 
         </div>
 
