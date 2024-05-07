@@ -23,5 +23,4 @@ class productos extends Model
     }
 
 
-
 }

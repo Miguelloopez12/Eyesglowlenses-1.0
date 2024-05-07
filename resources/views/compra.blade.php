@@ -10,17 +10,19 @@
     <div class="contenedor-facturacion">
 
 
-        <form action="">
+
+        <form id="formulario-compra" method="POST" action="">
+            @csrf
 
             <h3 class="fw-300 centrartexto">Detalles de facturación</h3>
 
             <div class="formulario-compra">
 
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" placeholder="Tu nombre">
+                <input type="text" id="nombre" name="nombre"placeholder="Tu nombre">
 
                 <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" placeholder="Tu apellido">
+                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido">
 
                 <label for="correo">Correo electronico:</label>
                 <input type="email" id="correo" placeholder="Tu correo electronico">
@@ -39,6 +41,8 @@
 
             </div>
         </form>
+
+
 
         <div class="formulario-pedido">
             <div class="titulo-pedido">
@@ -61,7 +65,7 @@
                 <div id="mensaje"></div>
             </div>
 
-            <form  id="form-finalizar-compra" action="" method="POST">
+            <form  id="form-finalizar-compra" action="{{ route('compra') }}" method="POST">
                 @csrf
                 <div class="boton-compra">
                 <button class="boton-producto" type="submit">Finalizar compra</button>

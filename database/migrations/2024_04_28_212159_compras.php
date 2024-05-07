@@ -11,11 +11,13 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+
+        public function up()
     {
         Schema::create('compras', function (Blueprint $table) {
             $table->id("id_compra");
-            $table->unsignedBigInteger("usuario_id");
+            $table->unsignedBigInteger("id");
+            $table->foreign("id")->references("id")->on("users");
             $table->decimal("monto_total",10,2);
             $table->timestamps();
         });
@@ -28,7 +30,22 @@ return new class extends Migration
             $table->foreign("id_producto")->references("id_producto")->on("productos");
             $table->integer("cantidad");
         });
+
+        Schema::create('facturacion', function (Blueprint $table) {
+            $table->id("id_factura");
+            $table->unsignedBigInteger("id_compra");
+            $table->foreign("id_compra")->references("id_compra")->on("compras");
+            $table->string("nombre", 50);
+            $table->string("apellido", 30);
+            $table->string("email", 50);
+            $table->integer("cedula")->unsigned();
+            $table->string("ciudad", 20);
+            $table->string("direccion", 20);
+            $table->integer("telefono")->unsigned();
+            $table->timestamps();
+        });
     }
+
 
     /**
      * Reverse the migrations.
@@ -37,6 +54,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('compras');
+        //
     }
 };

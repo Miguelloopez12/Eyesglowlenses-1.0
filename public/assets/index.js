@@ -356,6 +356,14 @@
         //enviar los datos del carrito al servidor
 
 
+        document.getElementById("formulario-compra").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            enviarCompra(this);
+
+        });
+
+
         document.getElementById("form-finalizar-compra").addEventListener("submit", function (event) {
             event.preventDefault();
 
@@ -373,13 +381,14 @@
 
             // Enviar el formulario
 
-
+             // Calcular el total de la compra
             const total = calcularTotalCompra(carrito);
+
+            // Agregar el total al formulario
             const inputTotal = document.createElement("input");
             inputTotal.type = "hidden";
             inputTotal.name = "total";
             inputTotal.value = total.toFixed(2);
-            console.log(inputTotal);
             this.appendChild(inputTotal);
 
             enviarCompra(this);
