@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Facturacion;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Compra extends Model
 {
@@ -21,7 +22,14 @@ class Compra extends Model
     {
         return $this->belongsToMany(Producto::class, 'productos_comprados', 'id_compra', 'id_producto');
     }
+
+    public function facturacion()
+    {
+        return $this->hasOne(Facturacion::class. "id_compra");
+    }
 }
+
+
 
 
 

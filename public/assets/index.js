@@ -356,16 +356,11 @@
         //enviar los datos del carrito al servidor
 
 
-        document.getElementById("formulario-compra").addEventListener("submit", function (event) {
-            event.preventDefault();
 
-            enviarCompra(this);
-
-        });
 
 
         document.getElementById("form-finalizar-compra").addEventListener("submit", function (event) {
-            event.preventDefault();
+
 
             // Obtener los datos del carrito del local storage
 

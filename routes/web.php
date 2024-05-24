@@ -1,10 +1,14 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CompraController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +35,6 @@ Auth::routes();
 
 
 
-
-
 Route::get('/sinbordes', [ProductosController::class, 'index'])->name('sinbordes');
 
 route::get("/conbordes", [ProductosController::class,"index1"])->name("conbordes");
@@ -45,7 +47,10 @@ route::get("/descripcion/{id_productos}", [ProductosController::class,"mostrarDe
 
 route::get("/compra/{id_productos}", [ProductosController::class,"mostrarProducto"])->name("compra.pr");
 
+route::get("/orden", [CompraController::class,"MostrarResumen"])->name("orden");
+
 Route::post('/compra', [CompraController::class, 'procesarCompra'])->name("compra");
+
 
 
 
